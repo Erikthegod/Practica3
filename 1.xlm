@@ -1,0 +1,8 @@
+<Juego>
+	<Codigo>1</Codigo>
+	<Titulo>Fifa 16</Titulo>
+	<Categoria>Futbol</Categoria>
+	<Plataforma>OUYA</Plataforma>
+	<Precio>30</Precio>
+	<Disponible>true</Disponible>
+</Juego>
