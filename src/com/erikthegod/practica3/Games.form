@@ -88,7 +88,7 @@
             <Property name="text" type="java.lang.String" value="Help"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+            <MenuItem class="javax.swing.JMenuItem" name="jmiAbout">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/icon-contactar.png"/>
@@ -96,7 +96,7 @@
                 <Property name="text" type="java.lang.String" value="About"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem6ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiAboutActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

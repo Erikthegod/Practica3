@@ -44,39 +44,12 @@ public class GestorFichero {
             fichero.println(vid.getPrecio());
             fichero.println(vid.isDisponible());
         } catch (FileNotFoundException ex) {
-            System.out.println("Fallo al almacenar el juego");
+            JOptionPane.showMessageDialog(null,"Fallo al almacenar el juego");
         } finally {
             fichero.close();
         }
         JOptionPane.showMessageDialog(null, "El juego ha sido almacenado correctamente");
     }
-
-   /* public void guardarBBDD(Videojuego vid) {
-        try {
-            Connection conexion = null;
-            Statement stmt = null;
-            String sql;//Cadena con la sentencia sql
-            Class.forName("org.sqlite.JDBC");//Carga del driver
-            conexion = DriverManager.getConnection("jdbc:sqlite:C:/juegosdb/dbjuegos");
-            stmt = conexion.createStatement();
-           // sql = "Create table juegos(codigo integer Primary key,titulo text,categoria text,plataforma text,precio integer,disponible text);";
-           if (vid.isDisponible() == true) {
-               sql = "insert into juegos values(" + vid.getCodigo() + ",'" + vid.getTitulo() + "','" + vid.getCategoria() + "','" + vid.getPlataforma() + "'," + vid.getPrecio() + ",'Disponible');";
-               stmt.executeUpdate(sql);
-            } else {
-               sql = "insert into juegos values(" + vid.getCodigo() + ",'" + vid.getTitulo() + "','" + vid.getCategoria() + "','" + vid.getPlataforma() + "'," + vid.getPrecio() + ",'No disponible');";
-               stmt.executeUpdate(sql);
-            }
-            stmt.close();
-            conexion.close();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GestorFichero.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(GestorFichero.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }*/
-
     /**
      * Metodo que lee un fichero, su nombre es el codigo que recibe el metodo de
      * la interfaz,los datos los va guardando linea a linea y los introduce en
@@ -110,6 +83,7 @@ public class GestorFichero {
             try {
                 br.close();
             } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error al cerrar el fichero");
                 ex.printStackTrace();
             }
         }
