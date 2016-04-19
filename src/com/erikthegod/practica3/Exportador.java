@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 
 /**
- * Exporta los datos de la interfaz a distintos tipos de archivos, html , xlxs,
+ * Exporta los datos de la interfaz a distintos tipos de archivos, html , xlx,
  * sql y xml
  *
  * @author Erik The God
@@ -16,12 +16,12 @@ public class Exportador {
 
     /**
      * Metodo que exporta los datos del objeto de la clase videojuego recibido ,
-     * en formato xlsx
+     * en formato xls
      *
      * @param vid Objeto de la clase videojuego con los datos introducidos por
      * el usuario en la interfaz
      */
-    public void exportarXlsx(Videojuego vid) {
+    public void exportarXls(Videojuego vid) {
         try {
             fichero = new PrintWriter(vid.getCodigo() + ".xls");
             fichero.println(vid.getCodigo() + "\t" + vid.getTitulo());

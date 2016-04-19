@@ -4,7 +4,8 @@ package com.erikthegod.practica3;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *Interfaz Grafica
+ * 
  * @author Erik The God
  */
 public class Games extends javax.swing.JFrame {
@@ -320,7 +321,7 @@ public class Games extends javax.swing.JFrame {
         boolean disponible = jcbDisponible.isSelected();
         vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
         gest.guardarJuego(vid);
-        export.exportarXlsx(vid);
+        export.exportarXls(vid);
         resetear();
     }//GEN-LAST:event_jmiXlsxActionPerformed
 
