@@ -26,8 +26,8 @@ public class Exportador {
             fichero = new PrintWriter(vid.getCodigo() + ".xls");
             fichero.println(vid.getCodigo() + "\t" + vid.getTitulo());
             fichero.println(vid.getCategoria() + '\t' + vid.getPlataforma());
-           // fichero.println(vid.getPrecio());
-           // fichero.println(vid.isDisponible());
+            fichero.println(vid.getPrecio());
+            fichero.println(vid.isDisponible());
         } catch (FileNotFoundException ex) {
             System.out.println("Fallo al exportar el juego");
         } finally {
@@ -93,7 +93,7 @@ public class Exportador {
     public void exportarXml(Videojuego vid) {
         try {
 
-            fichero = new PrintWriter(vid.getCodigo() + ".xlm");
+            fichero = new PrintWriter(vid.getCodigo() + ".xml");
             fichero.println("<Juego>");
             fichero.println("\t<Codigo>" + vid.getCodigo() + "</Codigo>");
             fichero.println("\t<Titulo>" + vid.getTitulo() + "</Titulo>");
@@ -101,7 +101,7 @@ public class Exportador {
             fichero.println("\t<Plataforma>" + vid.getPlataforma() + "</Plataforma>");
             fichero.println("\t<Precio>" + vid.getPrecio() + "</Precio>");
             if (vid.isDisponible() == true) {
-                fichero.println("\t<Disponible> Sí </Disponible>");
+                fichero.println("\t<Disponible> Si </Disponible>");
             } else {
                 fichero.println("\t<Disponible> No </Disponible>");
             }
@@ -129,7 +129,7 @@ public class Exportador {
             fichero.println("titulo varchar2(20),");
             fichero.println("categoria varchar2(20),");
             fichero.println("plataforma varchar2(20),");
-            fichero.println("precio number(3)");
+            fichero.println("precio number(3),");
             fichero.println("disponible varchar2(4)");
             fichero.println(");");
             if (vid.isDisponible() == true) {

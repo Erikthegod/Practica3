@@ -49,7 +49,7 @@ public class Games extends javax.swing.JFrame {
         jmlSave = new javax.swing.JMenuItem();
         jmiExit = new javax.swing.JMenuItem();
         jmExport = new javax.swing.JMenu();
-        jmiXlsx = new javax.swing.JMenuItem();
+        jmiXls = new javax.swing.JMenuItem();
         jmiHtml = new javax.swing.JMenuItem();
         jmiXml = new javax.swing.JMenuItem();
         jmiSql = new javax.swing.JMenuItem();
@@ -196,13 +196,13 @@ public class Games extends javax.swing.JFrame {
 
         jmExport.setText("Export");
 
-        jmiXlsx.setText("xls format");
-        jmiXlsx.addActionListener(new java.awt.event.ActionListener() {
+        jmiXls.setText("xls format");
+        jmiXls.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiXlsxActionPerformed(evt);
+                jmiXlsActionPerformed(evt);
             }
         });
-        jmExport.add(jmiXlsx);
+        jmExport.add(jmiXls);
 
         jmiHtml.setText("html format");
         jmiHtml.addActionListener(new java.awt.event.ActionListener() {
@@ -311,60 +311,128 @@ public class Games extends javax.swing.JFrame {
         interfaz.salir();
     }//GEN-LAST:event_jmiExitActionPerformed
 
-    private void jmiXlsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiXlsxActionPerformed
+    private void jmiXlsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiXlsActionPerformed
 
-        int codigo = (int) jsCodigo.getValue();
-        String titulo = jtfTitulo.getText();
-        String categoria = (String) jcbCategoria.getSelectedItem();
-        String plataforma = (String) jLista.getSelectedValue();
-        int precio = (int) jslPrecio.getValue();
-        boolean disponible = jcbDisponible.isSelected();
-        vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
-        gest.guardarJuego(vid);
-        export.exportarXls(vid);
-        resetear();
-    }//GEN-LAST:event_jmiXlsxActionPerformed
+       int codigo = (int) jsCodigo.getValue();
+        if (interfaz.verificador(codigo) == 1) {//Indica que el fichero ya existe
+            int resp = JOptionPane.showConfirmDialog(null, "Codigo ya en uso, si desea exportar debe sobreescribir el juego ya existente", "Precaucion", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_OPTION);
+            if (JOptionPane.YES_OPTION == resp) {//Si el usuario decide aceptar se sobreescribe el fichero
+                String titulo = jtfTitulo.getText();
+                String categoria = (String) jcbCategoria.getSelectedItem();
+                String plataforma = (String) jLista.getSelectedValue();
+                int precio = (int) jslPrecio.getValue();
+                boolean disponible = jcbDisponible.isSelected();
+                vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+                gest.guardarJuego(vid);
+                export.exportarXls(vid);
+                resetear();
+            } else {
+
+            }
+        } else {
+            String titulo = jtfTitulo.getText();
+            String categoria = (String) jcbCategoria.getSelectedItem();
+            String plataforma = (String) jLista.getSelectedValue();
+            int precio = (int) jslPrecio.getValue();
+            boolean disponible = jcbDisponible.isSelected();
+            vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+            gest.guardarJuego(vid);
+            export.exportarXls(vid);
+            resetear();
+        }
+    }//GEN-LAST:event_jmiXlsActionPerformed
 
     private void jmiHtmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiHtmlActionPerformed
 
-        int codigo = (int) jsCodigo.getValue();
-        String titulo = jtfTitulo.getText();
-        String categoria = (String) jcbCategoria.getSelectedItem();
-        String plataforma = (String) jLista.getSelectedValue();
-        int precio = (int) jslPrecio.getValue();
-        boolean disponible = jcbDisponible.isSelected();
-        vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
-        gest.guardarJuego(vid);
-        export.exportarHtml(vid);
-        resetear();
+       int codigo = (int) jsCodigo.getValue();
+        if (interfaz.verificador(codigo) == 1) {//Indica que el fichero ya existe
+            int resp = JOptionPane.showConfirmDialog(null, "Codigo ya en uso, si desea exportar debe sobreescribir el juego ya existente", "Precaucion", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_OPTION);
+            if (JOptionPane.YES_OPTION == resp) {//Si el usuario decide aceptar se sobreescribe el fichero
+                String titulo = jtfTitulo.getText();
+                String categoria = (String) jcbCategoria.getSelectedItem();
+                String plataforma = (String) jLista.getSelectedValue();
+                int precio = (int) jslPrecio.getValue();
+                boolean disponible = jcbDisponible.isSelected();
+                vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+                gest.guardarJuego(vid);
+                export.exportarHtml(vid);
+                resetear();
+            } else {
+
+            }
+        } else {
+            String titulo = jtfTitulo.getText();
+            String categoria = (String) jcbCategoria.getSelectedItem();
+            String plataforma = (String) jLista.getSelectedValue();
+            int precio = (int) jslPrecio.getValue();
+            boolean disponible = jcbDisponible.isSelected();
+            vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+            gest.guardarJuego(vid);
+            export.exportarHtml(vid);
+            resetear();
+        }
     }//GEN-LAST:event_jmiHtmlActionPerformed
 
     private void jmiXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiXmlActionPerformed
         
-        int codigo = (int) jsCodigo.getValue();
-        String titulo = jtfTitulo.getText();
-        String categoria = (String) jcbCategoria.getSelectedItem();
-        String plataforma = (String) jLista.getSelectedValue();
-        int precio = (int) jslPrecio.getValue();
-        boolean disponible = jcbDisponible.isSelected();
-        vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
-        gest.guardarJuego(vid);
-        export.exportarXml(vid);
-        resetear();
+    int codigo = (int) jsCodigo.getValue();
+        if (interfaz.verificador(codigo) == 1) {//Indica que el fichero ya existe
+            int resp = JOptionPane.showConfirmDialog(null, "Codigo ya en uso, si desea exportar debe sobreescribir el juego ya existente", "Precaucion", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_OPTION);
+            if (JOptionPane.YES_OPTION == resp) {//Si el usuario decide aceptar se sobreescribe el fichero
+                String titulo = jtfTitulo.getText();
+                String categoria = (String) jcbCategoria.getSelectedItem();
+                String plataforma = (String) jLista.getSelectedValue();
+                int precio = (int) jslPrecio.getValue();
+                boolean disponible = jcbDisponible.isSelected();
+                vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+                gest.guardarJuego(vid);
+                export.exportarXml(vid);
+                resetear();
+            } else {
+
+            }
+        } else {
+            String titulo = jtfTitulo.getText();
+            String categoria = (String) jcbCategoria.getSelectedItem();
+            String plataforma = (String) jLista.getSelectedValue();
+            int precio = (int) jslPrecio.getValue();
+            boolean disponible = jcbDisponible.isSelected();
+            vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+            gest.guardarJuego(vid);
+            export.exportarXml(vid);
+            resetear();
+        }
     }//GEN-LAST:event_jmiXmlActionPerformed
 
     private void jmiSqlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSqlActionPerformed
         
         int codigo = (int) jsCodigo.getValue();
-        String titulo = jtfTitulo.getText();
-        String categoria = (String) jcbCategoria.getSelectedItem();
-        String plataforma = (String) jLista.getSelectedValue();
-        int precio = (int) jslPrecio.getValue();
-        boolean disponible = jcbDisponible.isSelected();
-        vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
-        gest.guardarJuego(vid);
-        export.exportarSql(vid);
-        resetear();
+        if (interfaz.verificador(codigo) == 1) {//Indica que el fichero ya existe
+            int resp = JOptionPane.showConfirmDialog(null, "Codigo ya en uso, si desea exportar debe sobreescribir el juego ya existente", "Precaucion", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_OPTION);
+            if (JOptionPane.YES_OPTION == resp) {//Si el usuario decide aceptar se sobreescribe el fichero
+                String titulo = jtfTitulo.getText();
+                String categoria = (String) jcbCategoria.getSelectedItem();
+                String plataforma = (String) jLista.getSelectedValue();
+                int precio = (int) jslPrecio.getValue();
+                boolean disponible = jcbDisponible.isSelected();
+                vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+                gest.guardarJuego(vid);
+                export.exportarSql(vid);
+                resetear();
+            } else {
+
+            }
+        } else {
+            String titulo = jtfTitulo.getText();
+            String categoria = (String) jcbCategoria.getSelectedItem();
+            String plataforma = (String) jLista.getSelectedValue();
+            int precio = (int) jslPrecio.getValue();
+            boolean disponible = jcbDisponible.isSelected();
+            vid = new Videojuego(codigo, titulo, categoria, plataforma, precio, disponible);
+            gest.guardarJuego(vid);
+            export.exportarSql(vid);
+            resetear();
+        }
     }//GEN-LAST:event_jmiSqlActionPerformed
 
     private void jmiAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAboutActionPerformed
@@ -428,7 +496,7 @@ public class Games extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiHtml;
     private javax.swing.JMenuItem jmiLoad;
     private javax.swing.JMenuItem jmiSql;
-    private javax.swing.JMenuItem jmiXlsx;
+    private javax.swing.JMenuItem jmiXls;
     private javax.swing.JMenuItem jmiXml;
     private javax.swing.JMenuItem jmlSave;
     private javax.swing.JSpinner jsCodigo;
