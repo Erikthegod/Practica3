@@ -12,7 +12,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiLoad">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images.jpg"/>
+                  <Image iconType="3" name="/recursos/images.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Load"/>
               </Properties>
@@ -23,7 +23,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmlSave">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/descarga.png"/>
+                  <Image iconType="3" name="/recursos/descarga.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Save"/>
               </Properties>
@@ -34,7 +34,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiExit">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Log Out.png"/>
+                  <Image iconType="3" name="/recursos/Log Out.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
@@ -91,7 +91,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiAbout">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon-contactar.png"/>
+                  <Image iconType="3" name="/recursos/icon-contactar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="About"/>
               </Properties>

@@ -165,7 +165,7 @@ public class Games extends javax.swing.JFrame {
 
         jmFile.setText("File");
 
-        jmiLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images.jpg"))); // NOI18N
+        jmiLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/images.jpg"))); // NOI18N
         jmiLoad.setText("Load");
         jmiLoad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,7 +174,7 @@ public class Games extends javax.swing.JFrame {
         });
         jmFile.add(jmiLoad);
 
-        jmlSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descarga.png"))); // NOI18N
+        jmlSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/descarga.png"))); // NOI18N
         jmlSave.setText("Save");
         jmlSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +183,7 @@ public class Games extends javax.swing.JFrame {
         });
         jmFile.add(jmlSave);
 
-        jmiExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Log Out.png"))); // NOI18N
+        jmiExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Log Out.png"))); // NOI18N
         jmiExit.setText("Exit");
         jmiExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +232,7 @@ public class Games extends javax.swing.JFrame {
 
         jmHelp.setText("Help");
 
-        jmiAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-contactar.png"))); // NOI18N
+        jmiAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icon-contactar.png"))); // NOI18N
         jmiAbout.setText("About");
         jmiAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
