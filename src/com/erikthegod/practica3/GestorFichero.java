@@ -5,12 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -50,6 +44,7 @@ public class GestorFichero {
         }
         JOptionPane.showMessageDialog(null, "El juego ha sido almacenado correctamente");
     }
+
     /**
      * Metodo que lee un fichero, su nombre es el codigo que recibe el metodo de
      * la interfaz,los datos los va guardando linea a linea y los introduce en

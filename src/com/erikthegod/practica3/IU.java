@@ -1,4 +1,3 @@
-
 package com.erikthegod.practica3;
 
 import java.io.File;
@@ -25,7 +24,7 @@ public class IU {
      * Metodo que da informacion sobre la aplicacion
      */
     public void about() {
-        JOptionPane.showMessageDialog(null, "Aplicacion hecha por ErikTheGod \nVersion 1.0 \nCualquier problema notificar a erik14madridista@gmail.com");
+        JOptionPane.showMessageDialog(null, "Aplicacion hecha por ErikTheGod \nVersion 2.4 \nCualquier problema notificar a erik14madridista@gmail.com");
     }
 
     /**
@@ -47,5 +46,5 @@ public class IU {
         } else {
             return NO_EXISTE;
         }
-    }    
+    }
 }
